@@ -1,3 +1,4 @@
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
@@ -10,11 +11,13 @@
 }
 html {
     overflow-x: hidden;
+    font-size: 100%; /* 16px */
 }
 body {
     background-color: #1a1a1a;
     color: white;
-    overflow-y: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 section {
     min-height: 100vh;
@@ -24,14 +27,22 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 70px;
-  line-height: 70px;
-  padding: 0 20px;
+  height: 4.375rem;
+  line-height: 4.375rem;
+  padding: 0 1.25rem;
   background-color: #0f172a;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1100;
 }
 
 h1 {
@@ -45,7 +56,7 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin-left: 20px;
+    margin-left: 1.25rem;
 }
 
 nav a {
@@ -57,7 +68,17 @@ nav a {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
+    text-align: center;
+    gap: 2rem;
 }
+
+.home-content {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
 .home-content h3 {
     font-size: 3.2rem;
     font-weight: 700;
@@ -70,6 +91,7 @@ nav a {
 span {
     color: #0f172a;
 }
+
 .home-content h1 {
     font-size: 5.6rem;
     font-weight: 700;
@@ -77,21 +99,21 @@ span {
 }
 
 .container {
-  padding-right: 25px;
-  padding-left: 10px;
-  padding-top: 5px;
+  padding-right: 1.5625rem;
+  padding-left: 0.625rem;
+  padding-top: 0.3125rem;
 }
 
 .outer-circle {
   position: relative;
-  height: 380px;
-  width: 380px;
+  height: 23.75rem;
+  width: 23.75rem;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent 70%);
   box-shadow:
-    0 0 30px rgba(20, 255, 233, 0.1),
-    0 0 60px rgba(255, 0, 224, 0.1),
-    inset 0 0 30px rgba(255, 255, 255, 0.05);
+    0 0 1.875rem rgba(20, 255, 233, 0.1),
+    0 0 3.75rem rgba(255, 0, 224, 0.1),
+    inset 0 0 1.875rem rgba(255, 255, 255, 0.05);
   overflow: hidden;
 }
 
@@ -101,48 +123,51 @@ span {
   width: 100%;
   border-radius: 50%;
   background: linear-gradient(135deg, rgba(20, 255, 233, 0.15), rgba(255, 0, 224, 0.15));
-  filter: blur(20px);
+  filter: blur(1.25rem);
   opacity: 0.3;
 }
 
 .inner-circle {
   position: absolute;
-  height: 340px;
-  width: 340px;
-  top: 20px;
-  left: 20px;
+  height: 21.25rem;
+  width: 21.25rem;
+  top: 1.25rem;
+  left: 1.25rem;
   border-radius: 50%;
   background: url('../image/myself.jpg');
   background-size: cover;
   background-position: center;
   z-index: 2;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
 }
 
 button {
     background-color: #007bff;
     color: white;
     border: none;
-    padding: 10px 20px;
-    margin: 10px;
+    padding: 0.625rem 1.25rem;
+    margin: 0.625rem;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
 }
 
 button:hover {
     background-color: #0056b3;
 }
+
 .about {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5rem;
     background: #323946;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
 .about-img{
-    width: 300px;
-    height: 350px;
+    width: 18.75rem;
+    height: 21.875rem;
     max-width: 100%;
     background-image: url(../image/aku.jpg);
     background-size: cover;
@@ -164,13 +189,14 @@ button:hover {
 }
 
 .about-content p {
-    max-width: 600px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  font-size: 1.2rem;
-  line-height: 1.6;
+    max-width: 37.5rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
 }
-  .project {
+
+.project {
   padding: 5rem 1rem;
   background: #1e1e2f;
   color: #fff;
@@ -196,17 +222,17 @@ button:hover {
 .project-box {
   background: #2b2e3c;
   border-radius: 2rem;
-  height: 420px;
+  height: 26.25rem;
   padding: 3rem 2rem;
   text-align: center;
-  flex: 1 1 300px;
-  max-width: 320px;
+  flex: 1 1 18.75rem;
+  max-width: 20rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-box:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px #0ef;
+  box-shadow: 0 0 1.25rem #0ef;
 }
 
 .project-box i {
@@ -234,7 +260,7 @@ button:hover {
   padding: 1rem 2rem;
   border-radius: 2rem;
   font-weight: bold;
-  box-shadow: 0 0 15px #0ef;
+  box-shadow: 0 0 0.9375rem #0ef;
   transition: background 0.3s ease;
   text-decoration: none;
 }
@@ -242,6 +268,7 @@ button:hover {
 .project-box .btn:hover {
   background: #00c8e0;
 }
+
 .social-section {
   background-color: #0f172a;
   padding: 4rem 2rem;
@@ -257,10 +284,10 @@ button:hover {
 
 .section-description {
   font-size: 1.2rem;
-  max-width: 700px;
+  max-width: 43.75rem;
   margin: 0 auto 3rem;
   color: rgba(203, 213, 225, 0.7);
-  border-bottom: 2px solid rgba(100, 116, 139, 0.3);
+  border-bottom: 0.125rem solid rgba(100, 116, 139, 0.3);
   display: inline-block;
   padding-bottom: 1rem;
 }
@@ -273,23 +300,23 @@ button:hover {
 }
 
 .social-box {
-  background-color: rgba(30, 41, 59, 0.4); /* transparan */
+  background-color: rgba(30, 41, 59, 0.4);
   border-radius: 1rem;
   padding: 2rem;
-  width: 200px;
+  width: 12.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  backdrop-filter: blur(8px); /* efek kaca */
+  box-shadow: 0 0 0.625rem rgba(0,0,0,0.1);
+  backdrop-filter: blur(0.5rem);
 }
 
 .social-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px rgba(14, 255, 255, 0.2);
+  transform: translateY(-0.3125rem);
+  box-shadow: 0 0 0.9375rem rgba(14, 255, 255, 0.2);
 }
 
 .social-box img {
-  width: 60px;
-  height: 60px;
+  width: 3.75rem;
+  height: 3.75rem;
   object-fit: contain;
   margin-bottom: 1rem;
 }
@@ -306,13 +333,14 @@ button:hover {
   color: rgba(203, 213, 225, 0.6);
   font-size: 1rem;
 }
+
 .footer-thin {
   background: rgba(15, 23, 42, 0.85);
   padding: 1rem 2rem;
   text-align: center;
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(0.375rem);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -322,9 +350,123 @@ button:hover {
   align-items: center;
   gap: 0.5rem;
 }
+@media (min-width: 769px) {
+  .home-content {
+    text-align: left;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 1024px) {
+  .intro {
+    flex-direction: column;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+
+  .home-content h1 {
+    font-size: 4rem;
+  }
+
+  .home-content h3 {
+    font-size: 2.2rem;
+  }
+
+  .project-box {
+    flex: 1 1 100%;
+    max-width: 90%;
+  }
+
+  .about {
+    gap: 3rem;
+  }
+
+  .about-content h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 4.375rem;
+    left: 0;
+    width: 100%;
+    background-color: #0f172a;
+    padding: 1rem 0;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  .about {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .outer-circle,
+  .inner-circle {
+    width: 18rem;
+    height: 18rem;
+  }
+
+  .inner-circle {
+    top: 0.75rem;
+    left: 0.75rem;
+  }
+
+  .project-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-box {
+    max-width: 90%;
+  }
+
+  .intro {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .home-content {
+    max-width: 90%;
+  }
+
+  .heading {
+    font-size: 2.6rem;
+  }
+
+  .about-content h2 {
+    text-align: center;
+  }
+}
+
 @media (max-width: 480px) {
-  body {
-    font-size: 14px;
+  html {
+    font-size: 80%;
   }
 
   .services-box {
@@ -338,5 +480,28 @@ button:hover {
   .btn {
     font-size: 0.9rem;
     padding: 0.5rem 1rem;
+  }
+
+  .outer-circle,
+  .inner-circle {
+    width: 14rem;
+    height: 14rem;
+  }
+
+  .inner-circle {
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+
+  .home-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .home-content h3 {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
   }
 }
